@@ -20,8 +20,8 @@ MANIFEST TABLE:
 ['lastName', 'email']
 
 [['Bhujwala', 'abhujwala'], ['Ahmad', 'fahmad2'], ['Minogue', 'mminogue'], ['Upton', 'upton2']]
-
-
+.
+.
 QUERY: SELECT * FROM students GROUP BY 'GPA'
 
 FUNCTION: groupBy(students_schema,students_table,'GPA')
@@ -29,9 +29,8 @@ FUNCTION: groupBy(students_schema,students_table,'GPA')
 OUTPUT:
 
 [['Ali', 'Bhujwala', '2.0'], ['Michael', 'Minogue', '3.0'], ['Faizan', 'Ahmad', '3.2'], ['Robert', 'Downey', '5.0']]
-
-
-
+.
+.
 QUERY: SELECT * FROM students where lastName IN ('Bhujwala','Downey')
 
 FUNCTION: inn(students_schema,students_table,'lastName',['Bhujwala','Downey'])
@@ -39,9 +38,8 @@ FUNCTION: inn(students_schema,students_table,'lastName',['Bhujwala','Downey'])
 OUTPUT:
 
 [['Ali', 'Bhujwala', '2.0'], ['Robert', 'Downey', '5.0']]
-
-
-
+.
+.
 QUERY: SELECT students.firstName, students.lastName, students.GPA, manifest.email
 
 FROM students
@@ -53,9 +51,8 @@ FUNCTION: innerJoin(students_table,students_schema,manifest_table,manifest_schem
 OUTPUT:
 
 [['Ali', 'Bhujwala', '2.0', 'abhujwala'], ['Faizan', 'Ahmad', '3.2', 'fahmad2'], ['Michael', 'Minogue', '3.0', 'mminogue']]
-
-
-
+.
+.
 QUERY: SELECT students.firstName, students.lastName, students.GPA
 
 FROM students
@@ -67,9 +64,8 @@ FUNCTION: antiJoin(students_table,students_schema,manifest_table,manifest_schema
 OUTPUT:
 
 [['Robert', 'Downey', '5.0', '']]
-
-
-
+.
+.
 QUERY: SELECT *
 
 FROM students
